@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en" ng-app='CheckOffShoppingList'>
+  <head>
+    <title>Bob's Shopping List Check Off</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="angular.min.js"></script>
+    <script src="app.js"></script>
+    <link rel="stylesheet" href="styles/bootstrap.min.css">
+    <style>
+      .emptyMessage {
+        font-weight: bold;
+        color: red;
+        font-size: 1.2em;
+      }
+      li {
+        margin-bottom: 7px;
+        font-size: 1.2em;
+      }
+      li > button {
+        margin-left: 6px;
+      }
+      button > span {
+        color: green;
+      }
+    </style>
+  </head>
+
+<body>
+    <div class="container">
+
+        <h1>Bob's Shopping List Check Off</h1>
+
+        <div class="row" >
+
+            <!-- To Buy List -->
+            <div class="col-md-6" ng-controller="BuyListController as PLC">
+                <h2>To Buy:</h2>
+                <ul>
+                    <li ng-repeat="item in PLC.buyList">Buy {{item.quantity}} {{item.name}}
+                        <button ng-click="PLC.buyItem($index)">BOUGHT</button>
+                    </li>
+                </ul>
+
+                <div class="emptyMessage" ng-if="PLC.getSize()==0">Everything is bought!</div>
+            </div>
+
+            <!-- Already Bought List -->
+            <div class="col-md-6" ng-controller="BoughtListController as BLC">
+                <h2>Already Bought:</h2>
+                <ul>
+                    <li ng-repeat="item in BLC.boughtList">Bought {{item.quantity}} {{item.name}}
+                        <button ng-click="BLC.returnItem($index)">RETURN</button>
+                    </li>
+                </ul>
+                <div class="emptyMessage" ng-if="BLC.getSize()==0">Nothing bought yet.</div>
+            </div>
+
+        </div>
+
+    </div>
+</body>
+
+</html>
