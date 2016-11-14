@@ -4,7 +4,7 @@
     angular.module('ChineseMenuServer', [])
     .controller('NarrowItDownController', NarrowItDownController)
     .service('MenuItemsService', MenuItemsService)
-    .constant('ApiBasePath', "http://davids-restaurant.herokuapp.com")
+    .constant('ApiBasePath', "https://davids-restaurant.herokuapp.com")
     .directive('foundItems', FoundItems);
 
   function FoundItems() {
