@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en" ng-app='ChineseMenuServer'>
+  <head>
+    <title>Narrow Down Your Menu Choice</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="angular.min.js"></script>
+    <script src="app.js"></script>
+    <link rel="stylesheet" href="styles/bootstrap.min.css">
+    <link rel="stylesheet" href="styles/styles.css">
+  </head>
+
+  <body>
+      <div class="container" ng-controller="NarrowItDownController as CMC">
+
+          <div class="container">
+              <h1>Bob's Narrow Down Your Chinese Menu Choice</h1>
+
+              <div class="form-group">
+                  <input type="text" placeholder="search term" class="form-control" ng-model="CMC.itemFilter">
+              </div>
+              <div class="form-group narrow-button">
+                  <button ng-click="CMC.narrow()" class="btn btn-primary">Narrow It Down For Me!</button>
+              </div>
+          </div>
+
+          <div style="float:left;">
+              <found-items found-items="CMC.found" on-remove="CMC.onRemove(index)"> </found-items>
+              <span ng-if="CMC.itemsRetrieved && CMC.found.length==0">Nothing Found!<br></span>
+          </div>
+      </div>
+  </body>
+
+</html>

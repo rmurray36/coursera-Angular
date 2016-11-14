@@ -1,0 +1,3 @@
+<li ng-if="foundItems.length>0" ng-repeat="item in foundItems"> {{$index+1}} - {{item.name}}, ({{item.short_name}}), {{item.description}}
+    <button ng-click="this.onRemove({index:$index})">Don't want this one</button>
+</li>
