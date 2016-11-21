@@ -12,8 +12,8 @@
 
         $stateProvider
         .state('home', {
-            url: '/coursera-Angular/module4-solution/home',
-            templateUrl: '/src/home/home.html'
+            url: '/home',
+            templateUrl: '/home.html'
         })
 
         .state('categories', {
