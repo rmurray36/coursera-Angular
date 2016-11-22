@@ -8,7 +8,7 @@
     function MenuItems() {
         var ddo = {
           restrict: 'E',
-          templateUrl: 'src/items/itemslist.html',
+          templateUrl: 'itemslist.html',
           scope: {
             menuitems: '<'
           }

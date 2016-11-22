@@ -13,12 +13,12 @@
         $stateProvider
         .state('home', {
             url: '/home',
-            templateUrl: '/src/home/home.html'
+            templateUrl: 'home.html'
         })
 
         .state('categories', {
             url: '/categories',
-            templateUrl: '/src/categories/categories.html',
+            templateUrl: 'categories.html',
             controller: 'CategoriesController as categoriesCtlr',
             resolve: {
                 categoryItems: [
@@ -32,7 +32,7 @@
 
         .state('items', {
             url: '/items/{itemId}',
-            templateUrl: '/src/items/items.html',
+            templateUrl: 'items.html',
             controller: 'ItemsController as itemsCtlr',
             resolve: {
                 items: [

@@ -8,7 +8,7 @@
     function Categories() {
         var ddo = {
           restrict: 'E',
-          templateUrl: 'src/categories/categorieslist.html',
+          templateUrl: 'categorieslist.html',
           scope: {
             categories: '<',
             categoriessn: '<'
