@@ -1,0 +1,11 @@
+<div>
+  <ol>
+    <li ng-repeat="item in $ctrl.categories">
+      <!-- the 'items' below is passed into the routes.js for items with the $stateParams of 'itemId' -->
+      <a ui-sref="items({itemId: $ctrl.categoriessn[$index]})">
+           ({{$ctrl.categoriessn[$index]}})
+           {{item}}
+      </a>
+    </li>
+  </ol>
+</div>

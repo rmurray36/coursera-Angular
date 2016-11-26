@@ -2,19 +2,7 @@
     'use strict';
 
     angular.module('MenuApp')
-    .directive("menuItems", MenuItems)
     .controller('ItemsController', ItemsController);
-
-    function MenuItems() {
-        var ddo = {
-          restrict: 'E',
-          templateUrl: 'itemslist.html',
-          scope: {
-            menuitems: '<'
-          }
-        };
-        return ddo;
-    }
 
     ItemsController.$inject = ['items'];
     function ItemsController (items) {

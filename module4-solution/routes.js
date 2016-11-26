@@ -18,7 +18,7 @@
 
         .state('categories', {
             url: '/categories',
-            templateUrl: 'categories.html',
+            templateUrl: '/src/categories/categories.html',
             controller: 'CategoriesController as categoriesCtlr',
             resolve: {
                 categoryItems: [
@@ -32,7 +32,7 @@
 
         .state('items', {
             url: '/items/{itemId}',
-            templateUrl: 'items.html',
+            templateUrl: '/src/items/items.html',
             controller: 'ItemsController as itemsCtlr',
             resolve: {
                 items: [

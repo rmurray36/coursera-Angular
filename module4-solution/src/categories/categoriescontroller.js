@@ -2,20 +2,7 @@
     'use strict';
 
     angular.module('MenuApp')
-    .directive('categories', Categories)
     .controller('CategoriesController', CategoriesController);
-
-    function Categories() {
-        var ddo = {
-          restrict: 'E',
-          templateUrl: 'categorieslist.html',
-          scope: {
-            categories: '<',
-            categoriessn: '<'
-          }
-        };
-        return ddo;
-    }
 
     CategoriesController.$inject = ['categoryItems'];
     function CategoriesController (categoryItems) {
