@@ -10,7 +10,7 @@
         this.items = items;
         var items = [];
 
-        for (var i=0; i<itemsController.items.data.menu_items.length; i++){
+        for (var i=0; i<itemsController.items.data.menu_items.length-1; i++){
             var item = this.items.data.menu_items[i];
             items.push(item.name);
         }
