@@ -1,0 +1,75 @@
+    <link rel="stylesheet" href="css/public.css">
+    <form name='signupForm' novalidate>
+    Sign up for David Chu's China Bistro Newsletter </br></br>
+
+        <table>
+            <tr>
+                <td>First Name:</td>
+                <td>
+                    <input class="signup-item" type="text" name="firstName"
+                    ng-model="signupCtlr.firstName"
+                    required>
+                    <td ng-if="signupForm.firstName.$error.required && signupForm.firstName.$touched">First name is required.</td>
+                </td>
+            </tr>
+            <tr>
+                <td>Last Name:</td>
+                <td>
+                    <input class="signup-item" type="text" name="lastName"
+                    ng-model="signupCtlr.lastName"
+                    required>
+                    <td ng-if="signupForm.lastName.$error.required && signupForm.lastName.$touched">Last name is required.</td>
+                </td>
+            </tr>
+            <tr>
+                <td>eMail:</td>
+                <td>
+                    <input class="signup-item" type="text" name="email"
+                    ng-model="signupCtlr.email"
+                    required>
+                    <td ng-if="signupForm.email.$error.required && signupForm.email.$touched">Email address is required.</td>
+                </td>
+            </tr>
+            <tr>
+                <td>Phone:</td>
+                <td>
+                    <input class="signup-item" type="text" name="phoneNumber"
+                    ng-pattern="/^[0-9]{10,10}$/"
+                    ng-model="signupCtlr.phone"
+                    required>
+                    <td ng-if="signupForm.phoneNumber.$error.required && signupForm.phoneNumber.$touched">Phone number is required.</td>
+                    <td ng-if="signupForm.phoneNumber.$error.pattern">Valid format is 9999999999. 10 digits</td>
+                </td>
+            </tr>
+            <tr>
+                <td>Favorite Dish Menu#:</td>
+                    <td>
+                        <input class="signup-item" type="text" name="menuNumber"
+                        ng-model="signupCtlr.menuNumber" required min-length="1" ng-blur="signupCtlr.checkMenuNumberValid()">
+                    </td>
+                    <td ng-if="signupForm.menuNumber.$error.required && signupForm.menuNumber.$touched">Favorite dish is required.
+                    <td ng-if="signupCtlr.isMenuNumberValid()==false && signupForm.menuNumber.$touched">Favorite dish is invalid.</td>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <!-- Disabled Button -->
+                    <!-- <button ng-show="signupForm.$invalid==true || signupForm.isMenuNumberValid()==false"
+                    class="signup-button-disabled" ng-disabled="signupForm.$invalid" type="button">SUBMIT</button> -->
+                    <!-- Enable Button -->
+                    <!-- ng-disabled="signupForm.$invalid || signupForm.isMenuNumberValid()==false"  -->
+                    <button class="signup-button"
+                        ng-disabled="signupForm.$invalid || signupCtlr.isMenuNumberValid()==false"
+                        ng-model="submitDisabled"
+                        type="button"
+                        ng-click="signupCtlr.go()"
+                        ui-sref="public.home">SUBMIT
+                    </button>
+                </td>
+            </tr>
+
+        </table>
+    </br>
+
+</form>

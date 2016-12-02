@@ -1,0 +1,46 @@
+    <link rel="stylesheet" href="css/public.css">
+
+    <div class="" ng-controller="MyInfoController as myInfoCtlr">
+        <div ng-if= "myInfoCtlr.isRegistered()==true">
+            <div class="">
+                <table>
+                    <tr>
+                        <td>FIRST NAME: {{myInfoCtlr.firstName}}</td>
+                    </tr>
+                    <tr>
+                        <td>LAST NAME: {{myInfoCtlr.lastName}}</td>
+                    </tr>
+                    <tr>
+                        <td>EMAIL: {{myInfoCtlr.email}}</td>
+                    </tr>
+                    <tr>
+                        <td>PHONE: {{myInfoCtlr.phone}}</td>
+
+                    </tr>
+                </table>
+                <!-- <div class="menu-item-photo"> -->
+                <!-- <div class="menu-item-price">{{$ctrl.menuItem.price_small | currency}}<span> {{$ctrl.menuItem.small_portion_name}}</span> {{$ctrl.menuItem.price_large | currency}} <span>{{$ctrl.menuItem.large_portion_name}}</span></div> -->
+            </div>
+            <div class="">
+                <div>FAVORITE ITEM: ({{myInfoCtlr.shortName.short_name}}) {{myInfoCtlr.shortName.name}} : {{myInfoCtlr.shortName.description}}</div>
+                <img class="img-responsive" width="250" height="150" ng-src="{{myInfoCtlr.basePath}}/images/{{myInfoCtlr.shortName.short_name}}.jpg" alt="">
+            </div>
+        </div>
+        <div ng-if="myInfoCtlr.isRegistered()==false" class="">
+            <a ui-sref="signup"> Not signed up yet. Sign up now!</a>
+        </div>
+    </div>
+
+
+
+    <!-- <td></td>
+    <td></td>
+    <td>
+        <div class="col-sm-5">
+          <div>
+            <div>FAVORITE ITEM: {{myInfoCtlr.shortName.short_name}}</div>
+            {{myInfoCtlr.basePath}}/images/{{myInfoCtlr.shortName.short_name}}.jpg
+            <img class="img-responsive" width="250" height="150" ng-src="{{myInfoCtlr.basePath}}/images/{{myInfoCtlr.shortName.short_name}}.jpg" alt="">
+          </div>
+        </div>
+    </td>  -->
