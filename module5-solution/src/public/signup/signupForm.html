@@ -66,8 +66,11 @@
                         ng-model="submitDisabled"
                         type="button"
                         ng-click="signupCtlr.go()"
-                        ui-sref="public.home">SUBMIT
+                        >SUBMIT
                     </button>
+                </td>
+                <td>
+                    <a href="#" ng-model="signupCtlr.registrationSuccessful" ng-show="signupCtlr.registrationSuccessful">Registration Successful</a>
                 </td>
             </tr>
 

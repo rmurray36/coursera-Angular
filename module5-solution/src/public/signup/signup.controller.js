@@ -9,6 +9,7 @@
         var signupController = this;
         signupController.valid = false;
         signupController.submitDisabled = false;
+        signupController.registrationSuccessful = false;
 
         signupController.go = function () {
             // Ask the MenuService to retrieve the info on the menu item selected.  //
@@ -23,6 +24,7 @@
                                        signupController.phone,
                                        response]);
             signupController.valid = true;
+            signupController.registrationSuccessful = true;
         }
 
         signupController.getMenuItemError = function () {
@@ -32,7 +34,6 @@
         signupController.checkMenuNumberValid  = function () {
             var promise = MenuService.getMenuItem(signupController.menuNumber);
             promise.then(signupController.checkMenuItemResponse).catch(signupController.checkMenuItemError);
-            console.log("CHECKMENUNUMBER");
             return promise;
         }
 
