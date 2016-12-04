@@ -24,10 +24,12 @@
             <tr>
                 <td>eMail:</td>
                 <td>
-                    <input class="signup-item" type="text" name="email"
+                    <input class="signup-item" type="email" name="email"
                     ng-model="signupCtlr.email"
+                    ng-pattern="/^[_a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})$/"
                     required>
                     <td ng-if="signupForm.email.$error.required && signupForm.email.$touched">Email address is required.</td>
+                    <td ng-if="signupForm.email.$error.pattern && signupForm.email.$touched">Valid Email format is required.</td>
                 </td>
             </tr>
             <tr>
