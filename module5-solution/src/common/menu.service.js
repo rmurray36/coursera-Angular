@@ -31,8 +31,11 @@
       };
 
       service.getMenuItem = function (shortName) {
+          console.log("SHORT NAME=", shortName);
+          if (shortName == null) {
+              return;
+          }
           var url = ApiPath + '/menu_items/' + shortName.toUpperCase() + '.json'
-          //console.log(url);
           var promise =  $http.get(ApiPath + '/menu_items/' + shortName.toUpperCase() + '.json').then(
               function (response) {
                   service.favoriteMenuItemDescription = response.data;

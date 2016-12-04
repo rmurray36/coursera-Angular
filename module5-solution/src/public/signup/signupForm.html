@@ -47,7 +47,7 @@
                 <td>Favorite Dish Menu#:</td>
                     <td>
                         <input class="signup-item" type="text" name="menuNumber"
-                        ng-model="signupCtlr.menuNumber" required min-length="1" ng-blur="signupCtlr.checkMenuNumberValid()">
+                        ng-model="signupCtlr.menuNumber" required min-length="1" ng-keyup="signupCtlr.checkMenuNumberValid()">
                     </td>
                     <td ng-if="signupForm.menuNumber.$error.required && signupForm.menuNumber.$touched">Favorite dish is required.
                     <td ng-if="signupCtlr.isMenuNumberValid()==false && signupForm.menuNumber.$touched">Favorite dish is invalid.</td>

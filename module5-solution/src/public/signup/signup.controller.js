@@ -32,7 +32,7 @@
         signupController.checkMenuNumberValid  = function () {
             var promise = MenuService.getMenuItem(signupController.menuNumber);
             promise.then(signupController.checkMenuItemResponse).catch(signupController.checkMenuItemError);
-
+            console.log("CHECKMENUNUMBER");
             return promise;
         }
 
